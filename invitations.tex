@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+
+\usepackage{bashful}
+\usepackage{xcolor}
+
+% TODO: figure out mount2 option
+% \usepackage[cam,width=4truein,height=6truein,letter,center]{crop}
+\usepackage[T1]{fontenc}
+\usepackage{calligra}
+\usepackage{setspace}
+\usepackage[papersize={5in,7in},hmargin=1cm,vmargin={3cm,3cm}]{geometry}
+\usepackage{etoolbox}
+
+% define new fonts
+\newcommand{\fancy}{\calligra\Large}
+\newcommand{\block}{\sc\small}
+
+\pagestyle{empty}
+
+\color{magenta}
+\newcommand{\invitation}[6]{%
+    \clearpage
+    \begin{center}
+      \begin{singlespacing}
+        {\fancy #2,} \\
+        \vspace{0.5\baselineskip}
+        {\block Please join us \\for a bridal shower\\ in honour of} \\
+        \vspace{\baselineskip}
+        \vspace{\baselineskip}
+        {\fancy \Large \color{orange}{Our Daughter}} \\
+        \vspace{\baselineskip}
+        \vspace{\baselineskip}
+        \begin{block}
+          \textbf{Saturday, April 4, 2015} \\
+          at eleven thirty a.m. \\
+          A Nice Restaurant \\
+          987 Downtown Street \\
+          Windsor, Ontario \\
+
+          \vspace{\baselineskip}
+
+          \textbf{RSVP} \\
+          by Friday, March 27 \\
+          555-123-4567 \\
+
+          \vspace{\baselineskip}
+
+          \textbf{Registered at} \\
+          Home Outfitters and Crate \& Barrel
+
+          \vspace{\baselineskip}
+        \end{block}
+      \end{singlespacing}
+    \end{center}
+}
+
+\begin{document}
+
+\input{|"echo 'invitation' | ./generate_commands.py"}
+
+\end{document}

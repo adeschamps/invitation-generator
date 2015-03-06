@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\usepackage{bashful}
+
+\usepackage{calligra}
+\usepackage[papersize={7in,5in},hmargin={0cm,1cm},vmargin=1cm]{geometry}
+\usepackage{etoolbox}
+
+% define new fonts
+\newcommand{\fancy}{\calligra\Large}
+\newcommand{\block}{\sc\small}
+
+\pagestyle{empty}
+
+\newcommand{\envelope}[6]{%
+  \clearpage
+  {
+    \large
+    \raggedright
+    \bfseries
+    Anthony Deschamps \\
+    1234 My Street \\
+    Windsor, ON \\
+    A1B 2C3 \\
+  }
+
+  \vspace{2cm}
+
+  \begin{center}
+    \Large
+    \bfseries
+    \textrm{#1} $ $ \\
+    #3 $ $ \\
+    #4 $ $ \\
+    #5 $ $ \\
+  \end{center}
+}
+
+\begin{document}
+
+\input{|"echo 'envelope' | ./generate_commands.py"}
+
+\end{document}
